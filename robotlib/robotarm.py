@@ -15,7 +15,7 @@ class PhantomX(object):
             "hand": 0,
             "wrist": 0,
             "elbow": 0,
-            "sholder": 0,
+            "shoulder": 0,
         }
 
         self.ax12 = Ax12()
@@ -74,8 +74,8 @@ class PhantomX(object):
         """
         return self.ax12.readPosition(constants.MOTOR_ID_ELBOW[0])
 
-    def sholder(self, location):
-        """ Move sholder to desired location
+    def shoulder(self, location):
+        """ Move shoulder to desired location
         """
         if location < 0 or location > 1:
             raise ValueError("Incorrect value for location")
@@ -84,7 +84,7 @@ class PhantomX(object):
         position = int((1 - location) * 600 + 200)
         self.ax12.move(constants.MOTOR_ID_SHOLDER[1], position)
 
-    def get_sholder(self):
+    def get_shoulder(self):
         """ Return location of servo
         """
         return self.ax12.readPosition(constants.MOTOR_ID_SHOLDER[0])
