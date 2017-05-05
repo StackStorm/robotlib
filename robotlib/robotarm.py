@@ -80,14 +80,14 @@ class PhantomX(object):
         if location < 0 or location > 1:
             raise ValueError("Incorrect value for location")
         position = int(location * 600 + 200)
-        self.ax12.move(constants.MOTOR_ID_SHOLDER[0], position)
+        self.ax12.move(constants.MOTOR_ID_SHOULDER[0], position)
         position = int((1 - location) * 600 + 200)
-        self.ax12.move(constants.MOTOR_ID_SHOLDER[1], position)
+        self.ax12.move(constants.MOTOR_ID_SHOULDER[1], position)
 
     def get_shoulder(self):
         """ Return location of servo
         """
-        return self.ax12.readPosition(constants.MOTOR_ID_SHOLDER[0])
+        return self.ax12.readPosition(constants.MOTOR_ID_SHOULDER[0])
 
     def pivot(self, location):
         """ Move pivot to desired location
