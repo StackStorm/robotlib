@@ -1,4 +1,2 @@
-appdirs
-packaging
 pyserial
 rpi.GIPO
