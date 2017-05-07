@@ -113,8 +113,8 @@ class PhantomX(object):
         if not isinstance(state, bool):
             raise ValueError("State must be of type bool")
 
-        self.ax12.setTorqueStatus(constants.MOTOR_ID_ELBOW, state)
-        self.ax12.setTorqueStatus(constants.MOTOR_ID_ELBOW, state)
+        self.ax12.setTorqueStatus(constants.MOTOR_ID_ELBOW[0], state)
+        self.ax12.setTorqueStatus(constants.MOTOR_ID_ELBOW[1], state)
 
         return True
 
